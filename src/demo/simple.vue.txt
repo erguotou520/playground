@@ -1,0 +1,20 @@
+import { defineComponent, ref } from 'vue'
+export default defineComponent({
+  name: 'Demo',
+  setup() {
+    const todos = ref([
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ])
+
+    return () => (
+      <ol>
+        {todos.value.map(todo => <li>
+            {{ todo.text }}
+          </li>
+        )}
+      </ol>
+    )
+  }
+})
